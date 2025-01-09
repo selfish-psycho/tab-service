@@ -38,7 +38,7 @@ class Container implements ContainerInterface
         try {
             return
                 isset($this->objects[$id])
-                    ? $this->objects[$id]()         // "Старый подход"
+                    ? $this->objects[$id]()      // "Старый подход"
                     : $this->prepareObject($id); // "Новый" подход
 
         } catch (ContainerExceptionInterface|NotFoundExceptionInterface|Exception $exception) {

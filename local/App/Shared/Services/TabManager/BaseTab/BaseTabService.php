@@ -21,6 +21,4 @@ readonly class BaseTabService implements ServiceInterface
     {
         return $this->actions;
     }
-
-
 }

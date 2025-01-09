@@ -7,6 +7,7 @@ use Bitrix\Main\Application;
 use Bitrix\Main\Event;
 use Bitrix\Main\EventManager;
 use Bitrix\Main\EventResult;
+use CComponentEngine;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RegexIterator;
@@ -51,7 +52,7 @@ class BaseTabActions implements ActionInterface
         }
         //endregion Только для тех проектов, где уже реализовано добавление табов
 
-        $engine = new \CComponentEngine();
+        $engine = new CComponentEngine();
 
         //Для сделок, лидов, контактов и компаний
         $page = $engine->guessComponentPath(
