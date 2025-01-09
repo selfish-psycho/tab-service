@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Shared\DTO\TabManager;
+
 use OpenApi\Attributes\Parameter;
 use OpenApi\Attributes\Schema;
 
