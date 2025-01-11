@@ -44,11 +44,13 @@ class BaseTabActions implements ActionInterface
         $baseTabs = $event->getParameter('tabs');
 
         //region Только для тех проектов, где уже реализовано добавление табов
-        $eventResultTabs = current($event->getResults())->getParameters()['tabs'];
+        if (!empty($event->getResults())) {
+            $eventResultTabs = current($event->getResults())->getParameters()['tabs'];
 
-        //Если события уже были переопределены. Можно удалить выделенное, если есть уверенность, что нигде больше события не переопределяются
-        if (count($eventResultTabs) != count($baseTabs)) {
-            $baseTabs = $eventResultTabs;
+            //Если события уже были переопределены. Можно удалить выделенное, если есть уверенность, что нигде больше события не переопределяются
+            if (count($eventResultTabs) != count($baseTabs)) {
+                $baseTabs = $eventResultTabs;
+            }
         }
         //endregion Только для тех проектов, где уже реализовано добавление табов
 
