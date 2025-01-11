@@ -13,7 +13,7 @@ class TabManagerService implements BaseServiceInterface
     /**
      * @inheritDoc
      */
-    public static function create(int $typeId = ServicesEnums::BASE->value): ServiceInterface
+    public static function create(int $typeId): ServiceInterface
     {
         return match($typeId) {
             ServicesEnums::BASE->value => (new Container())->get(BaseTabService::class),
